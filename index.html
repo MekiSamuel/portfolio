@@ -856,7 +856,7 @@
             </div>
             
             <div class="hero-image-wrapper">
-                <img src="https://github.com/MekiSamuel/portfolio/blob/main/samuel.jpg" alt="Samuel Ricious Meki" class="hero-image">
+                <img src="samuel.jpg" alt="Samuel Ricious Meki" class="hero-image">
             </div>
         </div>
     </header>
@@ -865,7 +865,7 @@
         
         <section id="about">
             <h2 class="section-title"><i class="fa-solid fa-user-tie"></i> Personal Introduction</h2>
-            <p>My name is Samuel Ricious Meki. A hard-working, enthusiastic and self-motivated individual, with over 5 years of hands-on working experience in the IT field. I bring excellent expertise in the Design and Development of Desktop, Mobile and Web-based applications, as well as a mastery in managing and manipulating data structures, always eager to be challenged to grow and expand on my skill set. As a first-class team player, I will always work hard to motivate and achieve my goals.</p>
+            <p>My name is Samuel Ricious Meki. A hard-working, enthusiastic and self-motivated individual, with over 5 years of hands-on working experience in the IT field. I bring excellent experience in Systems Engineering, Network Administration, Project Management and Graphic Design. I am eager to find a suitable position in an organization that will recognize and maximize the use of my skills, competencies, and potential, where I can contribute effectively to the organizations' success. I have extensive expertise in managing LAN/WAN infrastructure, Microsoft 365, cybersecurity, and cloud solutions.</p>
         </section>
 
         <section id="skills">
@@ -999,53 +999,34 @@
                         <h3 class="timeline-title">Malawi School Certificate of Education</h3>
                         <span class="timeline-date">2011</span>
                     </div>
-                    <div class="timeline-subtitle">Malawi Examination Board</div>
-                </div>
-            </div>
-        </section>
-
-        <section id="certifications">
-            <h2 class="section-title"><i class="fa-solid fa-certificate"></i> Professional Certifications</h2>
-            <div class="skills-grid">
-                <div class="skill-box">
-                    <div class="skill-tags">
-                        <span><i class="fa-solid fa-fire-extinguisher"></i> Fire Prevention & Protection (2018)</span>
-                        <span><i class="fa-brands fa-php"></i> PHP - Solo Learn (2018)</span>
-                        <span><i class="fa-brands fa-java"></i> JAVA - Solo Learn (2018)</span>
-                        <span><i class="fa-regular fa-gem"></i> Ruby - Solo Learn (2018)</span>
-                        <span><i class="fa-brands fa-js"></i> JavaScript - Solo Learn (2018)</span>
-                        <span><i class="fa-brands fa-html5"></i> HTML - Solo Learn (2018)</span>
-                    </div>
+                    <div class="timeline-subtitle">Lilongwe Secondary School</div>
                 </div>
             </div>
         </section>
 
         <section id="references">
-            <h2 class="section-title"><i class="fa-solid fa-users"></i> References</h2>
+            <h2 class="section-title"><i class="fa-solid fa-handshake"></i> References</h2>
             <div class="reference-grid">
-                <div class="reference-card">
-                    <h4>Mr D. Chilenje</h4>
-                    <div class="role">Managing Director</div>
-                    <p><i class="fa-solid fa-building"></i> Macs agencies</p>
-                    <p><i class="fa-solid fa-location-dot"></i> P.O. Box 1412, Lilongwe</p>
-                    <p><i class="fa-solid fa-phone"></i> +265 993 112 25</p>
-                    <p><i class="fa-solid fa-envelope"></i> ricousmeki@gmail.com</p>
-                </div>
                 
                 <div class="reference-card">
-                    <h4>Mark Angelo Capada</h4>
-                    <div class="role">Systems Engineer - Team Lead</div>
-                    <p><i class="fa-solid fa-building"></i> Process Fusion Inc.</p>
-                    <p><i class="fa-solid fa-phone"></i> (905)363-0118 x 5021</p>
-                    <p><i class="fa-solid fa-envelope"></i> mark.capada@processfusion.com</p>
+                    <h4>Moses Munthali</h4>
+                    <p class="role">Director & Reference</p>
+                    <p><i class="fa-solid fa-phone"></i> +265 999 403 043</p>
+                    <p><i class="fa-solid fa-envelope"></i> moses.munthali@email.com</p>
                 </div>
-                
+
                 <div class="reference-card">
-                    <h4>Victor Malijani</h4>
-                    <div class="role">Team Lead</div>
-                    <p><i class="fa-solid fa-building"></i> TideRise</p>
-                    <p><i class="fa-solid fa-phone"></i> +0881762115</p>
-                    <p><i class="fa-solid fa-envelope"></i> victormalijani@tiderise.io</p>
+                    <h4>Gift Chikonde</h4>
+                    <p class="role">Operations Manager</p>
+                    <p><i class="fa-solid fa-phone"></i> +265 888 305 008</p>
+                    <p><i class="fa-solid fa-envelope"></i> gift.chikonde@tirerise.mw</p>
+                </div>
+
+                <div class="reference-card">
+                    <h4>Thabo Banda</h4>
+                    <p class="role">Academic Reference</p>
+                    <p><i class="fa-solid fa-phone"></i> +265 999 969 933</p>
+                    <p><i class="fa-solid fa-envelope"></i> tbanda@ncit.ac.mw</p>
                 </div>
             </div>
         </section>
@@ -1053,55 +1034,51 @@
     </div>
 
     <footer>
-        <p>&copy; 2026 Samuel Ricious Meki. All rights reserved.</p>
+        <p>&copy; 2024 Samuel Meki. All rights reserved. | Deployed with GitHub Pages</p>
     </footer>
 
     <script>
-        // Dark mode toggle
+        // Dark Mode Toggle
         const themeToggle = document.getElementById('themeToggle');
-        const html = document.documentElement;
+        const htmlElement = document.documentElement;
         
-        // Check for saved theme preference or default to light mode
-        const currentTheme = localStorage.getItem('theme') || 'light';
-        if (currentTheme === 'dark') {
-            html.classList.add('dark-mode');
-            themeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
+        // Load saved theme preference
+        const savedTheme = localStorage.getItem('theme') || 'light-mode';
+        htmlElement.classList.toggle('dark-mode', savedTheme === 'dark-mode');
+        updateThemeIcon();
+        
+        themeToggle.addEventListener('click', () => {
+            htmlElement.classList.toggle('dark-mode');
+            const currentTheme = htmlElement.classList.contains('dark-mode') ? 'dark-mode' : 'light-mode';
+            localStorage.setItem('theme', currentTheme);
+            updateThemeIcon();
+        });
+        
+        function updateThemeIcon() {
+            const icon = themeToggle.querySelector('i');
+            if (htmlElement.classList.contains('dark-mode')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            }
         }
 
-        themeToggle.addEventListener('click', () => {
-            html.classList.toggle('dark-mode');
-            const theme = html.classList.contains('dark-mode') ? 'dark' : 'light';
-            localStorage.setItem('theme', theme);
-            themeToggle.innerHTML = theme === 'dark' 
-                ? '<i class="fa-solid fa-sun"></i>' 
-                : '<i class="fa-solid fa-moon"></i>';
-        });
-
-        // Mobile menu toggle
+        // Mobile Menu Toggle
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.getElementById('navLinks');
-
+        
         hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('active');
             navLinks.classList.toggle('active');
         });
 
-        // Close menu when link is clicked
-        navLinks.querySelectorAll('a').forEach(link => {
+        // Close menu when a link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 hamburger.classList.remove('active');
                 navLinks.classList.remove('active');
-            });
-        });
-
-        // Smooth scroll for navigation
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
             });
         });
     </script>
